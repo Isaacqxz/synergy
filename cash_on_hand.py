@@ -17,7 +17,8 @@ data = r.json()
 for weekly in data:
     empty_list=[]
     weekly = re.findall(r"\'4. close\': \'1.[0-9][0-9][0-9][0-9][0-9]\'", data)
-    empty_list.append(weekly)
+    # empty_list.append(weekly) 
+    print(weekly)
 
 # string = ''.join(data)
 # for weekly in data:
