@@ -6,5 +6,15 @@ url = 'https://www.alphavantage.co/query?function=FX_WEEKLY&from_symbol=USD&to_s
 r = requests.get(url)
 data = r.json()
 
-print(data)
-print(data['Time Series FX (Weekly)'])
+
+
+# dict_keys(['Meta Data', 'Time Series FX (Weekly)'])
+# print(data["Meta Data"])
+
+import json
+# print(json.dumps(data["Time Series FX (Weekly)"],indent=4 ))
+
+close_data = data["Time Series FX (Weekly)"]
+print(close_data)
+# for close in close_data:
+#     print(close["4. close"])
