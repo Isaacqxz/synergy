@@ -1,44 +1,54 @@
+from pathlib import Path
+from tkinter.tix import DisplayStyle
 import requests
 import re, csv
 
-url = 'https://www.alphavantage.co/query?function=FX_WEEKLY&from_symbol=USD&to_symbol=SGD&apikey=8YE528VKW69J7ZJ9'
-r = requests.get(url)
-data = r.json()
+
+# file_path_deceit = Path(r"deceit_report.txt")
+
+# file_path_cash = Path(r"cash-on-hand-usd.csv")
+# file_path_overheads = Path(r"overheads-day-90.csv")
+# file_path_pnl = Path(r"profit-and-loss-usd.csv")
 
 
 
-print("hi")
+# with file_path_overheads.open(mode="r", encoding = "UTF-8", newline="") as file:
+#     csv.reader(file_path_overheads, delimiter=' ')
+#     included_cols = [1,2]
 
 
 
-# weekly_average = sum(data)
 
-# [x for x in data if '1.' in str(x)]
-# print(x)
-# # n = [1.[0-9][0-9][0-9][0-9][0-9]]
-# # if n in data:
-# #     print("true")
+#         with file_path_deceit.open(mode="w") as file:
+#             file.write("HIGHEST OVERHEADS {highest_overheads}")
+#         file.close()
+    
+    
+file_path_overheads = Path.cwd()/"CSV.report"/"overheads-day-90.csv"
 
-# # print(data)
-# # print(weekly_average)
-for weekly in data:
-    empty_list=[]
-    weekly = re.findall(r"\'4. close\': \'1.[0-9][0-9][0-9][0-9][0-9]\'", data)
-    # empty_list.append(weekly) 
-    print(weekly)
-# for weekly in data:
-#     empty_list=[]
-#     weekly = re.findall(r"\'4. close\': \'1.[0-9][0-9][0-9][0-9][0-9]\'", data)
-#     empty_list.append(weekly)
-
-# string = ''.join(data)
-# for weekly in data:
-#     match = re.findall(r"\'4. close\': \'1.[0-9][0-9][0-9][0-9][0-9]\'")
+with file_path_overheads.open(mode="r", encoding = "UTF-8", newline="") as file:
+    data = csv.reader(file, delimiter=';')
+    maxVal = []
+    for i in data:
+        maxVal.append(float(i[1]))
 
 
+csv.writer.writerow(maxVal)
+print(max(maxVal))
 
-# print(match)
-# print(data['Time Series FX (Weekly)'])
+
+# QUESTIONS FOR TEACHER:
+# how to highlight/flag 
+# how to read the specific columns
+# how to if values is highest
+
+
+
+
+# for i in range(1,len(coh)):
+#     deficit = coh["Cash On Hand"][i-1] - coh["Cash On Hand"][i]
+#     if(deficit > 0):
+#         print(pnl['Day'][i] , deficit)
 
 
 
