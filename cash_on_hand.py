@@ -23,7 +23,7 @@ def cash_on_hand(forex):
     if rows[i][1] < rows[i-1][1]:
         temp = []
         temp.append("{:.2f}".format(float(rows[i][0])))
-        temp.append("{:,2f}".format(forex*(int(rows[i-1][1] - int(rows[i][1])))))
+        temp.append("{:.2f}".format(forex*(int(rows[i-1][1] - int(rows[i][1])))))
 
         losses.append(temp)
 
