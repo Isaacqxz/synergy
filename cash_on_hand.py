@@ -1,54 +1,37 @@
 from pathlib import Path
-from tkinter.tix import DisplayStyle
-import requests
-import re, csv
-
-
-# file_path_deceit = Path(r"deceit_report.txt")
-
-# file_path_cash = Path(r"cash-on-hand-usd.csv")
-# file_path_overheads = Path(r"overheads-day-90.csv")
-# file_path_pnl = Path(r"profit-and-loss-usd.csv")
+import csv
 
 
 
-# with file_path_overheads.open(mode="r", encoding = "UTF-8", newline="") as file:
-#     csv.reader(file_path_overheads, delimiter=' ')
-#     included_cols = [1,2]
+def cash_on_hand(forex):
+    path = str(Path.cwd())("\csv.report\cash_on_hand_usd.csv")
 
+    rows = []
+    with open(path, "r") as a:
+        csvread = csv.reader(a)
+        next(csvread)
 
+        for row in csvread:
+            rows.append(row)
+        
+    losses = []
 
+    for i in range(len(rows)):
+        if i == 0:
+            continue #how to change this
+    if rows[i][1] < rows[i-1][1]:
+        temp = []
+        temp.append("{:.2f}".format(float(rows[i][0])))
+        temp.append("{:,2f}".format(forex*(int(rows[i-1][1]-int(rows[i][1])))))
 
-#         with file_path_deceit.open(mode="w") as file:
-#             file.write("HIGHEST OVERHEADS {highest_overheads}")
-#         file.close()
-    
-    
-file_path_overheads = Path.cwd()/"CSV.report"/"overheads-day-90.csv"
+        losses.append(temp)
 
-with file_path_overheads.open(mode="r", encoding = "UTF-8", newline="") as file:
-    data = csv.reader(file, delimiter=';')
-    maxVal = []
-    for i in data:
-        maxVal.append(float(i[1]))
-
-
-csv.writer.writerow(maxVal)
-print(max(maxVal))
-
-
-# QUESTIONS FOR TEACHER:
-# how to highlight/flag 
-# how to read the specific columns
-# how to if values is highest
+    return losses
 
 
 
 
-# for i in range(1,len(coh)):
-#     deficit = coh["Cash On Hand"][i-1] - coh["Cash On Hand"][i]
-#     if(deficit > 0):
-#         print(pnl['Day'][i] , deficit)
+
 
 
 
