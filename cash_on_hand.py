@@ -4,7 +4,8 @@ import csv
 
 
 def cash_on_hand(forex):
-    path = str(Path.cwd())("\csv.report\cash_on_hand_usd.csv")
+    path = str(Path.cwd())
+    path += "\csv.report\cash_on_hand_usd.csv"
 
     rows = []
     with open(path, "r") as a:
