@@ -15,7 +15,7 @@ def api_function():
     r = requests.get(url)
     data = r.json()
 
-    return float(data['Realtime Currency Exchange Rate']['5. exchange Rate'])
+    return float(data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
 
 
 
