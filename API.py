@@ -1,7 +1,7 @@
 import requests
 
-
 def api_function():
+    
     function= "CURRENCY_EXCHANGE_RATE"
     from_symbol= "USD"
     to_symbol= "SGD"
@@ -11,4 +11,4 @@ def api_function():
 
     data = requests.get(url).json()
 
-    return float(data['Realtime Currency Exchange Rate']['5. exchange Rate'])
+    return float(data)
