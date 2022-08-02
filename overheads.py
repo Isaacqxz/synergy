@@ -1,7 +1,8 @@
 import csv
 from pathlib import Path
 def overhead(forex):
-    path = str(Path.cwd())("\csv.report\overheads.csv")
+    path = str(Path.cwd())
+    path += "\csv.report\overheads.csv"
 
     rows = []
     with open(path, "r") as a:

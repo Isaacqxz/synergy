@@ -3,7 +3,8 @@ from pathlib import Path
 
 
 def profit_and_loss(forex):
-    path = str(Path.cwd())("\csv.report\profit_and_loss_usd.csv")
+    path = str(Path.cwd())
+    path =+ "\csv.report\profit_and_loss_usd.csv"
 
     rows = []
     with open(path, "r") as a:
