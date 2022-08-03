@@ -14,7 +14,7 @@ def api_function():
 
     return float(data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
 
-if KeyError:
+if ValueError:
     print("error")
 
 
