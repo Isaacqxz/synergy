@@ -20,11 +20,10 @@ def profit_and_loss(forex):
             formula.append(round(float(rows[i+1][0]),2))
             formula.append(round(forex*(int(rows[i][4]) - int(rows[i+1][4])),2))
             losses.append(formula)
-            # print(losses)
+
 
     return losses
 
-# print(profit_and_loss(forex))
 
 with open("summary_report.txt", "a") as a:
     if profit_and_loss(forex) == []:
