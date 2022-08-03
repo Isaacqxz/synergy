@@ -8,10 +8,11 @@ def overall():
 
     with open("summary_report.txt", "w") as a:
         
-        if a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n") == True:
+        if a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n") == False:
             a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
         else:
             print("error with REAL TIME CURRENCY CONVERSION RATE")
+
         a.write(f"[HIGHEST OVERHEAD] {max_overheads[0].upper()}: SGD{max_overheads[1]}\n")
 
         if cash_on_hand_losses == []:
