@@ -26,7 +26,10 @@ def cash_on_hand(forex):
         
     return losses
 
-    
+if cash_on_hand == KeyError:
+    print("died")
+else:
+    next
 
 
 
