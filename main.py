@@ -16,15 +16,17 @@ def overall():
             for i in range(len(cash_on_hand_losses)):
                 a.write(f"[CASH DEFICIT] DAY: {cash_on_hand_losses[i][0]}, AMOUNT: SGD{cash_on_hand_losses[i][1]}\n")
         else:
-            print("Error for cash_on_hand")
+            print("Error for cash_on_hand function")
             
 
             
         if profit_n_loss_losses == []:
             a.write(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY \n")
-        else:
+        elif profit_n_loss_losses != []:
             for i in range(len(profit_n_loss_losses)):
                 a.write(f"[PROFIT DEFICIT] DAY: {profit_n_loss_losses[i][0]}, AMOUNT: SGD{profit_n_loss_losses[i][1]}\n")
+        else:
+            print("Error for profit_n_loss function")
                 
     print("output successful")
 
