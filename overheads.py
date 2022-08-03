@@ -1,5 +1,8 @@
-import csv
+import csv, API
 from pathlib import Path
+
+forex = API.api_function()
+
 def overhead(forex):
     path = str(Path.cwd())+"\csv_report\overheads.csv"
 
@@ -17,5 +20,9 @@ def overhead(forex):
         if max < float(rows[i][1]):
             max = float(rows[i][1])
             Highest_overhead = [rows[i][0], round((max * forex),2)]
+
+        with open("summary_report.txt", "w") as a:
+            a.write(f"[HIGHEST OVERHEAD] {overhead(forex)[0].upper()}: SGD{overhead(forex)[1]}\n")
+            a.close()
 
     return Highest_overhead

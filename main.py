@@ -2,12 +2,13 @@ import API, overheads, profit_and_loss, cash_on_hand
 
 def overall():
     forex = API.api_function()
-    max_overheads = overheads.overhead(forex)
+    # max_overheads = overheads.overhead(forex)
     profit_n_loss_losses = profit_and_loss.profit_and_loss(forex)
     cash_on_hand_losses = cash_on_hand.cash_on_hand(forex)
+    overheads.overhead(forex)
     with open("summary_report.txt", "w") as a:
         a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
-        a.write(f"[HIGHEST OVERHEAD] {max_overheads[0].upper()}: SGD{max_overheads[1]}\n")
+        # a.write(f"[HIGHEST OVERHEAD] {max_overheads[0].upper()}: SGD{max_overheads[1]}\n")
 
 
         if cash_on_hand_losses == []:
@@ -24,11 +25,6 @@ def overall():
             for i in range(len(profit_n_loss_losses)):
                 a.write(f"[PROFIT DEFICIT] DAY: {profit_n_loss_losses[i][0]}, AMOUNT: {profit_n_loss_losses[i][1]}\n")
     return("output successful")
-
-if API.api_function() == KeyError:
-    print("died")
-else:
-    next
 
 print(overall())
 
