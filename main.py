@@ -28,8 +28,9 @@ import API, overheads, profit_and_loss, cash_on_hand
 # print(overall())
 
 def main():
-        with open("summary_report.txt", "a") as a:
+        with open("summary_report.txt", "w") as a:
             a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
+            a.close()
         forex = API.api_function()
         overheads.overhead(forex)
         cash_on_hand.cash_on_hand(forex)
