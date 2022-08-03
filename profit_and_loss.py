@@ -3,15 +3,12 @@ from pathlib import Path
 
 
 def profit_and_loss(forex):
-    path = str(Path.cwd())
-    path += "\csv_report\profit_and_loss_usd.csv"
-
+    path = str(Path.cwd())+"\csv_report\profit_and_loss_usd.csv"
     rows = []
+
     with open(path, "r") as a:
         csvread = csv.reader(a)
         next(csvread)
-
-
         for row in csvread:
             rows.append(row)
         
