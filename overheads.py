@@ -16,6 +16,6 @@ def overhead(forex):
     for i in range(len(rows)):
         if max < float(rows[i][1]):
             max = float(rows[i][1])
-            Highest_overhead = [rows[i][0], (max * forex).round(2)]
+            Highest_overhead = float[rows[i][0], (max * forex).round(2)]
 
     return Highest_overhead
