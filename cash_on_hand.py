@@ -19,7 +19,7 @@ def cash_on_hand(forex):
         
     losses = []
 
-    for i in range(len(rows)):
+    for i in range(len(rows)-1):
         if rows[i+1][1] < rows[i][1]:
             formula = []
             formula.append("{:.2f}".format(float(rows[i][0])))
