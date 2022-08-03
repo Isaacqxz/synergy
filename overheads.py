@@ -21,8 +21,8 @@ def overhead(forex):
             max = float(rows[i][1])
             Highest_overhead = [rows[i][0], round((max * forex),2)]
 
-        with open("summary_report.txt", "w") as a:
-            a.write(f"[HIGHEST OVERHEAD] {overhead(forex)[0].upper()}: SGD{overhead(forex)[1]}\n")
-            a.close()
-
     return Highest_overhead
+
+with open("summary_report.txt", "w") as a:
+    a.write(f"[HIGHEST OVERHEAD] {overhead(forex)[0].upper()}: SGD{overhead(forex)[1]}\n")
+    a.close()
