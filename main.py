@@ -12,6 +12,8 @@ def overall():
 
         if cash_on_hand_losses == AttributeError:
             print("Error for cash_on_hand function")
+        elif cash_on_hand_losses == NameError:
+            print("Error for cash_on_hand function")
         elif cash_on_hand_losses == []:
             a.write(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
         elif cash_on_hand_losses != []:
