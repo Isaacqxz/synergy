@@ -21,9 +21,7 @@ def overall():
         else:
             for i in range(len(profit_n_loss_losses)):
                 a.write(f"[PROFIT DEFICIT] DAY: {profit_n_loss_losses[i][0]}, AMOUNT: SGD{profit_n_loss_losses[i][1]}\n")
-
-        a.write(f"[CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
-
+                
     print("output successful")
 
 print(overall())
