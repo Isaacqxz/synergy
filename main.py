@@ -23,7 +23,7 @@ def overall():
         else:
             for i in range(len(profit_n_loss_losses)):
                 a.write(f"[PROFIT DEFICIT] DAY: {profit_n_loss_losses[i][0]}, AMOUNT: {profit_n_loss_losses[i][1]}\n")
-    print("output successful")
+    return("output successful")
 
 print(overall())
 
