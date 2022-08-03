@@ -6,6 +6,10 @@ import csv
 
 def cash_on_hand(forex):
     path = str(Path.cwd())+"\csv_report\cash_on_hand_usd.csv"
+    if path.exist:
+        next
+    else: 
+        print("path does not exist")
 
     rows = []
     with open(path, "r") as a:
@@ -20,8 +24,9 @@ def cash_on_hand(forex):
         if rows[i+1][1] < rows[i][1]:
             formula = []
             formula.append("{:.2f}".format(float(rows[i+1][0])))
-            form
-
+            formula.append("{:.2f}".format(forex*(int(rows[i][1]) - int(rows[i+1][1]))))
+            losses.append(formula)
+        
     return losses
 
     
