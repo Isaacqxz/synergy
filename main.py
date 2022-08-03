@@ -31,9 +31,9 @@ def main():
         forex = API.api_function()
         with open("summary_report.txt", "w") as a:
             a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
-        print(overheads.overhead(forex))
-        print(cash_on_hand.cash_on_hand(forex))
-        print(profit_and_loss.profit_and_loss(forex))
+        overheads.overhead(forex)
+        cash_on_hand.cash_on_hand(forex)
+        profit_and_loss.profit_and_loss(forex)
 
 
         return("output successful")
