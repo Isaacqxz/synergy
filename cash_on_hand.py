@@ -14,8 +14,7 @@ def cash_on_hand(forex):
         next(csvread)
 
 
-        for row in csvread:
-            rows.append(row)
+        for row in csvread:rows.append(row)
         
     losses = []
 
