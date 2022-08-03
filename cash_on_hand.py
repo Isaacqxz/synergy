@@ -6,10 +6,7 @@ import csv
 
 def cash_on_hand(forex):
     path = str(Path.cwd())+"\csv_report\cash_on_hand_usd.csv"
-    if path == True:
-        next
-    else: 
-        print("path does not exist")
+
 
     rows = []
     with open(path, "r") as a:
