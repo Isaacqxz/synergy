@@ -31,7 +31,7 @@ def cash_on_hand(forex):
                     a.write(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
                     a.close()
                 else:
-                    for i in range(len(cash_on_hand(forex))):
+                    for i in range(len(losses)):
                         a.write(f"[CASH DEFICIT] DAY: {cash_on_hand(forex)[i][0]}, AMOUNT: {cash_on_hand(forex)[i][1]}\n")
                         a.close()
         
