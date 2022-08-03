@@ -1,6 +1,7 @@
 import csv
 from pathlib import Path
 
+
 def profit_and_loss(forex):
     path = str(Path.cwd())
     path += "\csv_report\profit_and_loss_usd.csv"
