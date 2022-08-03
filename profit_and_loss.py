@@ -18,7 +18,6 @@ def profit_and_loss(forex):
     losses = []
 
     for i in range(len(rows)):
-
         continue 
     if rows[i][4] < rows[i-1][4]:
         formula = []
