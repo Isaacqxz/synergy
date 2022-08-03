@@ -8,7 +8,7 @@ def overall():
 
     with open("summary_report.txt", "w") as a:
         
-        if a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n") == False:
+        if forex.exists:
             a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
         else:
             print("error with REAL TIME CURRENCY CONVERSION RATE")
