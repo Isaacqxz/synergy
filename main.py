@@ -25,5 +25,10 @@ def overall():
                 a.write(f"[PROFIT DEFICIT] DAY: {profit_n_loss_losses[i][0]}, AMOUNT: {profit_n_loss_losses[i][1]}\n")
     return("output successful")
 
+if overall == KeyError:
+    print("died")
+else:
+    next
+
 print(overall())
 
