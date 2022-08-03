@@ -27,7 +27,7 @@ def cash_on_hand(forex):
         
     return losses
 
-with open("summary_report.txt", "w") as a:
+with open("summary_report.txt", "a") as a:
     if cash_on_hand(forex) == []:
         a.write(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
         a.close()
