@@ -7,19 +7,17 @@ def overall():
     cash_on_hand_losses = cash_on_hand.cash_on_hand(forex)
 
     with open("summary_report.txt", "w") as a:
-        
-        if API.api_function.exist:
-            a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
-        else:
-            print("error with REAL TIME CURRENCY CONVERSION RATE")
-
+        a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
         a.write(f"[HIGHEST OVERHEAD] {max_overheads[0].upper()}: SGD{max_overheads[1]}\n")
 
         if cash_on_hand_losses == []:
             a.write(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
-        else:
+        elif cash_on_hand_losses != []:
             for i in range(len(cash_on_hand_losses)):
                 a.write(f"[CASH DEFICIT] DAY: {cash_on_hand_losses[i][0]}, AMOUNT: SGD{cash_on_hand_losses[i][1]}\n")
+        else:
+            print("Error for cash_on_hand")
+            
 
             
         if profit_n_loss_losses == []:
