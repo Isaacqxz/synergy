@@ -18,11 +18,11 @@ import API, overheads, profit_and_loss, cash_on_hand
                 
 
                 
-#         if profit_n_loss_losses == []:
-#             a.write(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY \n")
-#         else:
-#             for i in range(len(profit_n_loss_losses)):
-#                 a.write(f"[PROFIT DEFICIT] DAY: {profit_n_loss_losses[i][0]}, AMOUNT: {profit_n_loss_losses[i][1]}\n")
+        # if profit_n_loss_losses == []:
+        #     a.write(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY \n")
+        # else:
+        #     for i in range(len(profit_n_loss_losses)):
+        #         a.write(f"[PROFIT DEFICIT] DAY: {profit_n_loss_losses[i][0]}, AMOUNT: {profit_n_loss_losses[i][1]}\n")
 #     return("output successful")
 
 # print(overall())
@@ -30,7 +30,7 @@ import API, overheads, profit_and_loss, cash_on_hand
 def main():
     forex = API.api_function()
     overheads.overhead(forex)
-    # profit_and_loss.profit_and_loss(forex)
+    profit_and_loss.profit_and_loss(forex)
     # cash_on_hand.cash_on_hand(forex)
 
 print(main())
