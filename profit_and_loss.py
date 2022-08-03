@@ -1,8 +1,8 @@
 import csv
 from pathlib import Path
-import API
 
-forex = API.api_function()
+
+
 def profit_and_loss(forex):
     path = str(Path.cwd())
     path += "\csv_report\profit_and_loss_usd.csv"
@@ -24,14 +24,12 @@ def profit_and_loss(forex):
         if rows[i][4] < rows[i-1][4]:
             formula = []
             formula.append("{:.2f}".format(float(rows[i][0])))
-            formula.append("{:,2f}".format(forex*(int(rows[i-1][4]-int(rows[i][4])))))
+            formula.append("{:.2f}".format(forex*(int(rows[i-1][4]-int(rows[i][4])))))
 
             losses.append(formula)
-            # print(losses)
 
     return losses
 
-print(profit_and_loss(forex))
 
 
 
