@@ -11,7 +11,6 @@ def cash_on_hand(forex):
     with open(path, "r") as a:
         csvread = csv.reader(a)
         next(csvread)
-        next(csvread)
 
         for row in csvread:
             rows.append(row)
