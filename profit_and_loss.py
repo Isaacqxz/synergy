@@ -28,7 +28,7 @@ with open("summary_report.txt", "a") as a:
         a.write(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY \n")
         a.close()
     else:
-        for i in range(len(profit_and_loss)):
+        for i in range(len(profit_and_loss(forex))):
             a.write(f"[PROFIT DEFICIT] DAY: {profit_and_loss[i][0]}, AMOUNT: {profit_and_loss[i][1]}\n")
             a.close()
 
