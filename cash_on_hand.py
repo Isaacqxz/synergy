@@ -20,7 +20,7 @@ def cash_on_hand(forex):
 
     for i in range(len(rows)):
             continue
-    while rows[i][1] < rows[i-1][1]:
+    if rows[i][1] < rows[i-1][1]:
         formula = []
         formula.append("{:.2f}".format(float(rows[i][0])))
         formula.append("{:.2f}".format(forex*(int(rows[i-1][1]) - int(rows[i][1]))))
