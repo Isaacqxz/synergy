@@ -1,3 +1,4 @@
+
 from turtle import hideturtle
 import requests
 
@@ -12,8 +13,6 @@ def api_function():
     data = r.json()
 
     return float(data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
-
-
 
 
 
