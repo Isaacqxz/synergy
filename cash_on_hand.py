@@ -6,7 +6,7 @@ import csv
 
 def cash_on_hand(forex):
     path = str(Path.cwd())+"\csv_report\cash_on_hand_usd.csv"
-    if path.exist:
+    if path.exist():
         next
     else: 
         print("path does not exist")
