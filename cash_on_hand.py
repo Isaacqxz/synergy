@@ -23,18 +23,17 @@ def cash_on_hand(forex):
             formula.append(round(float(rows[i+1][0]),2))
             formula.append(round(forex*(int(rows[i][1]) - int(rows[i+1][1])),2))
             losses.append(formula)
-            print(cash_on_hand(forex))
         
     # return losses
 
-    with open("summary_report.txt", "w") as a:
-        if cash_on_hand(forex) == []:
-            a.write(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
-            a.close()
-        else:
-            for i in range(len(cash_on_hand(forex))):
-                a.write(f"[CASH DEFICIT] DAY: {cash_on_hand(forex)[i][0]}, AMOUNT: {cash_on_hand(forex)[i][1]}\n")
-                a.close()
+            with open("summary_report.txt", "w") as a:
+                if cash_on_hand(forex) == []:
+                    a.write(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
+                    a.close()
+                else:
+                    for i in range(len(cash_on_hand(forex))):
+                        a.write(f"[CASH DEFICIT] DAY: {cash_on_hand(forex)[i][0]}, AMOUNT: {cash_on_hand(forex)[i][1]}\n")
+                        a.close()
         
                 
 
