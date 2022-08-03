@@ -32,5 +32,6 @@ def main():
     overheads.overhead(forex)
     cash_on_hand.cash_on_hand(forex)
     profit_and_loss.profit_and_loss(forex)
+    return(main())
 
-print(main())
+main()
