@@ -1,5 +1,6 @@
 from pathlib import Path
 import csv
+# forex = API.api_function()
 
 
 
@@ -18,14 +19,12 @@ def cash_on_hand(forex):
         
     losses = []
 
-    for i in range(len(rows)):
-            continue
-    if rows[i][1] < rows[i-1][1]:
-        formula = []
-        formula.append("{:.2f}".format(float(rows[i][0])))
-        formula.append("{:.2f}".format(forex*(int(rows[i-1][1]) - int(rows[i][1]))))
-
-        losses.append(formula)
+    for i in range(len(rows)-1):
+        if rows[i+1][1] < rows[i][1]:
+            formula = []
+            formula.append("{:.2f}".format(float(rows[i][0])))
+            formula.append("{:.2f}".format(forex*(int(rows[i-1][1]) - int(rows[i][1]))))
+            losses.append(formula)
 
     return losses
 
