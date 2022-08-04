@@ -13,13 +13,13 @@ def profit_and_loss(forex):
         
     losses = []
 
-    for o in range(len(rows)-1):
-        if rows[o+1][4] < rows[o][4]:
+    for i in range(len(rows)-1):
+        if rows[i+1][4] < rows[i][4]:
             formula = []
-            formula.append(round(float(rows[o+1][4]),2))
-            formula.append(round(forex*(int(rows[o][4]) - int(rows[o+1][4])),2))
+            formula.append(round(float(rows[i+1][4]),2))
+            formula.append(round(forex*(int(rows[i][4]) - int(rows[i+1][4])),2))
             losses.append(formula)
-            print(o)
+            print(i)
 
 
     return losses
@@ -30,8 +30,8 @@ with open("summary_report.txt", "a") as a:
         a.write(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY \n")
         # a.close()
     else:
-        for o in range(len(profit_and_loss(forex))):
-            a.write(f"[PROFIT DEFICIT] DAY: {profit_and_loss(forex)[o][0]}, AMOUNT: {profit_and_loss(forex)[o][4]}\n")
+        for i in range(len(profit_and_loss(forex))):
+            a.write(f"[PROFIT DEFICIT] DAY: {profit_and_loss(forex)[i][0]}, AMOUNT: {profit_and_loss(forex)[i][4]}\n")
             # a.close()
 
 
