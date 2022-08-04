@@ -14,7 +14,7 @@ def cash_on_hand(forex):
     day and the value difference.
     """
 
-    path = str(Path.cwd())/"csv_report"/"cash_on_hand_usd.csv"
+    path = str(Path.cwd())+"\csv_report\cash_on_hand_usd.csv"
     # to extract cash on hand data from MAB game through CSV file
     rows = []
     #empty list for file to append into 
