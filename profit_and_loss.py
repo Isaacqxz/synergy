@@ -19,7 +19,6 @@ def profit_and_loss(forex):
             formula.append(round(float(rows[i+1][4]),2))
             formula.append(round(forex*(int(rows[i][4]) - int(rows[i+1][4])),2))
             losses.append(formula)
-        print(i)
 
 
     return losses
