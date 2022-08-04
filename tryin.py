@@ -49,7 +49,7 @@ def cash_on_hand(forex):
 
     except:
         with report_path.open(mode="a") as file:
-            file.write("\n[COH File Error] File is missing or not renamed properly. Ensure that file is named 'cash_on_hand_usd.csv")
+            file.write(f"[Cash on hand File Error] There is an error with Cash on hand file. Please ensure that file is correct\n")
             file.close()
 
     else:
