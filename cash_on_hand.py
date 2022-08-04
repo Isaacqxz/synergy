@@ -28,7 +28,7 @@ with open("summary_report.txt", "a") as a:
         # a.close()
     else:
         for i in range(len(cash_on_hand(forex))):
-            a.write(f"[CASH DEFICIT] DAY: {cash_on_hand(forex)[i][0]}, AMOUNT: {cash_on_hand(forex)[i][1]}\n")
+            a.write(f"[CASH DEFICIT] DAY: {cash_on_hand(forex)[i][0]}, AMOUNT: SGD{cash_on_hand(forex)[i][1]}\n")
             # a.close()
 
                 
