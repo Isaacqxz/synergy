@@ -26,12 +26,12 @@ def profit_and_loss(forex):
 
 
         losses = []
+        with profit_n_lost_path.open(mode="r", encoding = "UTF-8") as file:
+            if losses == []:
+                file.write("\n[NET PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
+                file.close()
 
-        if losses == []:
-            file.write("\n[NET PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
-            file.close()
-
-        i = []
+            i = []
         while len(profit_n_lost_list) > i + 1:
 
             if float(profit_n_lost_list(i+1)[4]) < float(profit_n_lost_list[i][4]):
