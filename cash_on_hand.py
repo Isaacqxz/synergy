@@ -24,7 +24,7 @@ def cash_on_hand(forex):
         return losses
         
     with open("summary_report.txt", "a") as a:
-        a.write(f"[CASH DEFICIT] DAY: {rows[i][0]}, AMOUNT: SGD{rows[i][1]}\n")
+        a.write(f"[CASH DEFICIT] DAY: {losses[i][0]}, AMOUNT: SGD{losses[i][1]}\n")
 
     if losses == []:
         with open("summary_report.txt", "a") as a:
