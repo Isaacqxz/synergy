@@ -12,6 +12,7 @@ def api_function():
     # get the url to extract data from alphavantage
     r = requests.get(url)
     data = r.json()
+    print(data.keys)
 
     return float(data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
 
