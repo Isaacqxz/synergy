@@ -49,7 +49,7 @@ def cash_on_hand(forex):
 
     except:
         with report_path.open(mode="a") as file:
-            file.write(f"[Cash on hand File Error] There is an error with Cash on hand file. Please ensure that file is correct\n")
+            file.write(f"[Cash on hand File Error] There is an error with Cash on hand file. Please try to input correct file name\n")
             file.close()
 
     else:
