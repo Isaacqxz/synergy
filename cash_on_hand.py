@@ -21,7 +21,7 @@ def cash_on_hand(forex):
             formula.append(round(forex*(int(rows[i][1]) - int(rows[i+1][1])),2))
             losses.append(formula)
         with open("summary_report.txt", "a") as a:
-            a.write(f"[CASH DEFICIT] DAY: {rows(forex)[i][0]}, AMOUNT: SGD{rows(forex)[i][1]}\n")
+            a.write(f"[CASH DEFICIT] DAY: {rows[i][0]}, AMOUNT: SGD{rows[i][1]}\n")
 
     if losses == []:
         with open("summary_report.txt", "a") as a:
