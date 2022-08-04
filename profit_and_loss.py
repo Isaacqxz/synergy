@@ -24,9 +24,11 @@ def profit_and_loss(forex):
 
         return losses
     except:
-        print("error")
+        with open("summary_report.txt", "a") as a:
+            a.write(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY \n")
+            a.close()
     else:
-        next
+        pass
 
 
 with open("summary_report.txt", "a") as a:
