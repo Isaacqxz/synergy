@@ -7,7 +7,6 @@ url = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_cu
 link = requests.get(url)
 data = link.json()
 
-
 def api_function():
     """
     Function is to extract real time currency exchange from USD to SGD from alphavantage.co
@@ -18,11 +17,13 @@ def api_function():
     # link = requests.get(url)
     # data = link.json()
 
-    tryin = float(data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
-
-    with open("summary_report.txt", "w") as a:
-        a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{tryin}\n")
-
-    return tryin
+    return float(data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
 
 forex = api_function()
+
+with open("summary_report.txt", "w") as a:
+    a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
+
+
+
+
