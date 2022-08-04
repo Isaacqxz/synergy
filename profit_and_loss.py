@@ -9,8 +9,7 @@ def profit_and_loss(forex):
     with open(path, "r") as a:
         csvread = csv.reader(a)
         next(csvread)
-        for row in csvread:
-            rows.append(row)
+        for row in csvread:rows.append(row)
         
     losses = []
 
