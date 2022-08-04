@@ -3,37 +3,47 @@ from pathlib import Path
 
 forex = API.api_function()
 
-def coh_function(forex):
-    coh_path = Path.cwd()/"csv_report"/"cash_on_hand_usd.csv"
+def cash_on_hand(forex):
+    """"
+    function will compute
+    the difference in Cash-on-Hand between each
+    day. If Cash-on-Hand is not consecutively higher
+    each day, the program will highlight the day
+    where Cash-on-Hand is lower than the previous
+    day and the value difference.
+    """
+    cash_on_hand_path = Path.cwd()/"csv_report"/"cash_on_hand_usd.csv"
     report_path = Path.cwd()/"summary_report.txt"
 
     try:
-        with coh_path.open(mode="r", encoding = "UTF-8") as file:
+        with cash_on_hand_path.open(mode="r", encoding = "UTF-8") as file:
             reader = csv.reader(file)
             next(reader)
 
-            coh_list = []
+            cash_on_hand_list = []
             for line in reader:
-                coh_list.append(line)
+                cash_on_hand_list.append(line)
 
             index = 0
             deficit = 0
 
-            while index + 1 < len(coh_list):
+            if deficit == 0:
+                file.write("\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
+                file.close()
 
-                if float(coh_list(index)[1]) > float(coh_list[index + 1][1]):
+            while index + 1 < len(cash_on_hand_list):
 
-                    deficit = float(coh_list[index][1]) - float(coh_list[index + 1][1])
+                if float(cash_on_hand_list(index)[1]) > float(cash_on_hand_list[index + 1][1]):
+
+                    deficit = float(cash_on_hand_list[index][1]) - float(cash_on_hand_list[index + 1][1])
 
                     with report_path.open(mode= "a") as file:
-                        file.write(f"\n[CASH DEFICIT] DAY: {coh_list[index + 1 ][0]}, AMOUNT: SGD{round((deficit *forex),2)}")
+                        file.write(f"\n[CASH DEFICIT] DAY: {cash_on_hand_list[index + 1 ][0]}, AMOUNT: SGD{round((deficit *forex),2)}")
                         file.close()
 
                 index += 1
 
-            if deficit == 0:
-                file.write("\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
-                file.close()
+
 
             file.close()
 
