@@ -25,4 +25,4 @@ def api_function():
 
     return forex
 
-forex = api_function
+forex = api_function()
