@@ -30,7 +30,7 @@ with open("summary_report.txt", "a") as a:
         # a.close()
     else:
         for i in range(len(profit_and_loss(forex))):
-            a.write(f"[PROFIT DEFICIT] DAY: {profit_and_loss[i][0]}, AMOUNT: SGD{profit_and_loss(forex)[i][4]}\n")
+            a.write(f"[PROFIT DEFICIT] DAY: {profit_and_loss(forex)[i][0]}, AMOUNT: SGD{profit_and_loss(forex)[i][4]}\n")
             # a.close()
 
 
