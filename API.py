@@ -2,6 +2,7 @@
 from turtle import hideturtle
 import requests
 
+
 def api_function():
     """
     Function is to extract real time currency exchange from USD to SGD from alphavantage.co
@@ -13,6 +14,8 @@ def api_function():
     data = r.json()
 
     return float(data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
+
+forex = api_function()
 
 with open("summary_report.txt", "w") as a:
     a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
