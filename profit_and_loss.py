@@ -13,13 +13,13 @@ def profit_and_loss(forex):
         
     losses = []
 
-    for i in range(len(rows)-1):
-        if rows[i+1][4] < rows[i][4]:
+    for o in range(len(rows)-1):
+        if rows[o+1][4] < rows[o][4]:
             formula = []
-            formula.append(round(float(rows[i+1][4]),2))
-            formula.append(round(forex*(int(rows[i][4]) - int(rows[i+1][4])),2))
+            formula.append(round(float(rows[o+1][4]),2))
+            formula.append(round(forex*(int(rows[o][4]) - int(rows[o+1][4])),2))
             losses.append(formula)
-            print(i)
+            print(o)
 
 
     return losses
