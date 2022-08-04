@@ -18,11 +18,11 @@ def api_function():
     # link = requests.get(url)
     # data = link.json()
 
-    forex = float(data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
+    tryin = float(data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
 
     with open("summary_report.txt", "w") as a:
-        a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
+        a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{tryin}\n")
 
     return forex
 
-
+forex = api_function
