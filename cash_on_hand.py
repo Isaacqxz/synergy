@@ -5,7 +5,6 @@ forex = API.api_function()
 
 def cash_on_hand(forex):
     path = str(Path.cwd())+"\csv_report\cash_on_hand_usd.csv"
-    # try:
     rows = []
     with open(path, "r") as a:
         csvread = csv.reader(a)
