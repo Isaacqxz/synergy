@@ -32,8 +32,8 @@ def cash_on_hand(forex):
     
     except:
         with open("summary_report.txt", "a") as a:
-                file.write("Error with \n[CASH_ON_HAND] file")
-                file.close
+                a.write("Error with \n[CASH_ON_HAND] file")
+                a.close
     else:
         pass
                 
