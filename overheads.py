@@ -32,6 +32,6 @@ def overhead(forex):
         with open("summary_report.txt", "a") as a:
             a.write("problem")
     else:
-        # with open("summary_report.txt", "a") as a:
-        #     a.write(f"[HIGHEST OVERHEAD] {overhead(forex)[0].upper()}: SGD{overhead(forex)[1]}\n")
-        pass
+        with open("summary_report.txt", "a") as a:
+            a.write(f"[HIGHEST OVERHEAD] {overhead(forex)[0].upper()}: SGD{overhead(forex)[1]}\n")
+        # pass
