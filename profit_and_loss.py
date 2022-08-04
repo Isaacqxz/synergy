@@ -28,18 +28,18 @@ def profit_and_loss(forex):
             losses = []
 
             if losses == []:
-                file.write("\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
+                file.write("\n[NET PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
                 file.close()
 
             i = []
             while len(profit_n_lost_list) > i + 1:
 
-                if float(profit_n_lost_list(i+1)[1]) < float(profit_n_lost_list[i][1]):
+                if float(profit_n_lost_list(i+1)[4]) < float(profit_n_lost_list[i][4]):
 
-                    losses = float(profit_n_lost_list[i][1]) - float(profit_n_lost_list[i + 1][1])
+                    losses = float(profit_n_lost_list[i][4]) - float(profit_n_lost_list[i + 1][4])
 
                     with report_path.open(mode= "a") as file:
-                        file.write(f"\n[CASH DEFICIT] DAY: {profit_n_lost_list[i + 1 ][0]}, AMOUNT: SGD{round((losses *forex),2)}")
+                        file.write(f"\n[PROFIT DEFICIT] DAY: {profit_n_lost_list[i + 1 ][0]}, AMOUNT: SGD{round((losses *forex),2)}")
                         file.close()
 
                 i += 1
