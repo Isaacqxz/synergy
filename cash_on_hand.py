@@ -6,12 +6,9 @@ forex = API.api_function()
 
 def cash_on_hand(forex):
     """"
-    function will compute
-    the difference in Cash-on-Hand between each
-    day. If Cash-on-Hand is not consecutively higher
-    each day, the program will highlight the day
-    where Cash-on-Hand is lower than the previous
-    day and the value difference.
+    function will compute the difference in Cash-on-Hand between each day. 
+    If Cash-on-Hand is not consecutively higher each day, the program will highlight the day
+    where Cash-on-Hand is lower than the previous day and the value difference.
     """
 
     path = str(Path.cwd())+"\csv_report\cash_on_hand_usd.csv"
