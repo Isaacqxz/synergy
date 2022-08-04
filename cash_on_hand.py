@@ -20,7 +20,8 @@ def cash_on_hand(forex):
         csvread = csv.reader(a)
         next(csvread)
         # skip header of the file
-        for row in csvread:rows.append(row)
+        for row in csvread:
+            rows.append(row)
         # appending cash_on_hand_usd.csv file as a list
             
     losses = []
