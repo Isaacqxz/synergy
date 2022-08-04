@@ -19,9 +19,11 @@ def profit_and_loss(forex):
             formula.append(round(float(rows[i+1][4]),2))
             formula.append(round(forex*(int(rows[i][4]) - int(rows[i+1][4])),2))
             losses.append(formula)
+            print(i)
 
 
     return losses
+
 
 with open("summary_report.txt", "a") as a:
     if profit_and_loss(forex) == []:
@@ -29,7 +31,7 @@ with open("summary_report.txt", "a") as a:
         # a.close()
     else:
         for i in range(len(profit_and_loss(forex))):
-            a.write(f"[PROFIT DEFICIT] DAY: {profit_and_loss(forex)[i][0]}, AMOUNT: {profit_and_loss(forex)[i][3]}\n")
+            a.write(f"[PROFIT DEFICIT] DAY: {profit_and_loss(forex)[i][0]}, AMOUNT: {profit_and_loss(forex)[i][4]}\n")
             # a.close()
 
 
