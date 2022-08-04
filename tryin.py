@@ -24,13 +24,14 @@ def cash_on_hand(forex):
             for line in reader:
                 cash_on_hand_list.append(line)
 
-            index = 0
-            deficit = 0
 
-            if deficit == 0:
+            deficit = []
+
+            if deficit == []:
                 file.write("\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
                 file.close()
-
+                
+            index = 0
             while index + 1 < len(cash_on_hand_list):
 
                 if float(cash_on_hand_list(index)[1]) > float(cash_on_hand_list[index + 1][1]):
