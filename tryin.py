@@ -24,24 +24,24 @@ def cash_on_hand(forex):
                 cash_on_hand_list.append(line)
 
 
-            deficit = []
+            losses = []
 
-            if deficit == []:
+            if losses == []:
                 file.write("\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
                 file.close()
 
-            index = []
-            while index + 1 < len(cash_on_hand_list):
+            i = []
+            while i + 1 < len(cash_on_hand_list):
 
-                if float(cash_on_hand_list(index)[1]) > float(cash_on_hand_list[index + 1][1]):
+                if float(cash_on_hand_list(i+1)[1]) < float(cash_on_hand_list[i][1]):
 
-                    deficit = float(cash_on_hand_list[index][1]) - float(cash_on_hand_list[index + 1][1])
+                    losses = float(cash_on_hand_list[i][1]) - float(cash_on_hand_list[i + 1][1])
 
                     with report_path.open(mode= "a") as file:
-                        file.write(f"\n[CASH DEFICIT] DAY: {cash_on_hand_list[index + 1 ][0]}, AMOUNT: SGD{round((deficit *forex),2)}")
+                        file.write(f"\n[CASH DEFICIT] DAY: {cash_on_hand_list[i + 1 ][0]}, AMOUNT: SGD{round((deficit *forex),2)}")
                         file.close()
 
-                index += 1
+                i += 1
 
 
 
