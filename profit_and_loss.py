@@ -13,7 +13,7 @@ def profit_and_loss(forex):
         
     losses = []
 
-    for i in range(len(rows)-1):
+    for o in range(len(rows)-1):
         if rows[i+1][4] < rows[i][4]:
             formula = []
             formula.append(round(float(rows[i+1][4]),2))
