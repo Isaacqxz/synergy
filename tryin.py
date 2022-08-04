@@ -31,14 +31,14 @@ def cash_on_hand(forex):
                 file.close()
 
             i = []
-            while i + 1 < len(cash_on_hand_list):
+            while len(cash_on_hand_list) > i + 1:
 
                 if float(cash_on_hand_list(i+1)[1]) < float(cash_on_hand_list[i][1]):
 
                     losses = float(cash_on_hand_list[i][1]) - float(cash_on_hand_list[i + 1][1])
 
                     with report_path.open(mode= "a") as file:
-                        file.write(f"\n[CASH DEFICIT] DAY: {cash_on_hand_list[i + 1 ][0]}, AMOUNT: SGD{round((deficit *forex),2)}")
+                        file.write(f"\n[CASH DEFICIT] DAY: {cash_on_hand_list[i + 1 ][0]}, AMOUNT: SGD{round((losses *forex),2)}")
                         file.close()
 
                 i += 1
