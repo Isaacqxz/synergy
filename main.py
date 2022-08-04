@@ -32,8 +32,8 @@ def main():
     with open("summary_report.txt", "w") as a:
         a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
         # a.close()
-        next
-    overheads.overhead(forex)
+        
+    print(overheads.overhead(forex))
     cash_on_hand.cash_on_hand(forex)
     profit_and_loss.profit_and_loss(forex)
     return("output successful")
