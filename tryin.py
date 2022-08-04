@@ -17,10 +17,9 @@ def cash_on_hand(forex):
 
     try:
         with cash_on_hand_path.open(mode="r", encoding = "UTF-8") as file:
+            cash_on_hand_list = []
             reader = csv.reader(file)
             next(reader)
-
-            cash_on_hand_list = []
             for line in reader:
                 cash_on_hand_list.append(line)
 
@@ -30,8 +29,8 @@ def cash_on_hand(forex):
             if deficit == []:
                 file.write("\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
                 file.close()
-                
-            index = 0
+
+            index = []
             while index + 1 < len(cash_on_hand_list):
 
                 if float(cash_on_hand_list(index)[1]) > float(cash_on_hand_list[index + 1][1]):
