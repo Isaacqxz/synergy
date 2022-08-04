@@ -4,7 +4,7 @@ from pathlib import Path
 forex = API.api_function()
 
 def profit_and_loss(forex):
-    path = str(Path.cwd())+"\csv_report\profit_and_loss_usd.csv"
+    path = str(Path.cwd())+"\csv_report\profit_and_loss_ud.csv"
     try:
         rows = []
         with open(path, "r") as a:
