@@ -23,6 +23,6 @@ def api_function():
     with open("summary_report.txt", "w") as a:
         a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{tryin}\n")
 
-    return forex
+    return tryin
 
 forex = api_function()
