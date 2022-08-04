@@ -14,7 +14,8 @@ def overhead(forex):
         for row in csvreader:rows.append(row)
 
     max = 0
-    # this is so that the first number in overheads.csv can be max since all overheads is > 0. After first number is max, the code will use the max and compare with subsequence data to aquire new max
+    #the first number in overheads.csv can be max since all overheads is > 0.
+    #After first number is max, the code will use the max and compare with subsequence data to aquire new max
     Highest_overhead = []
 
     for i in range(len(rows)):
