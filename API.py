@@ -14,10 +14,10 @@ def api_function():
 
     return float(data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
 
-# forex = api_function()
+forex = api_function()
 
-# with open("summary_report.txt", "w") as a:
-#     a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
+with open("summary_report.txt", "w") as a:
+    a.write(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
 
 
 
