@@ -42,9 +42,9 @@ def profit_and_loss(forex):
 
             i += 1
 
-        if losses == []:
-            file.write("\n[NET PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-            file.close()
+            if losses == []:
+                file.write("\n[NET PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+                file.close()
 
         file.close()
 
