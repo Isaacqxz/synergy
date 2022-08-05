@@ -52,7 +52,7 @@ def profit_and_loss(forex):
 
     except:
         with report_path.open(mode="a") as file:
-            file.write(f"\n[Profit and loss e] There is an error with Cash on hand file. Please try to input correct file name")
+            file.write(f"\n[Profit and loss] There is an error with Cash on hand file. Please try to input correct file name")
             file.close()
 
     else:

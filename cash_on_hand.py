@@ -14,9 +14,9 @@ def cash_on_hand(forex):
 
 
     try:
-        with cash_on_hand_path.open(mode="r", encoding = "UTF-8") as file:
+        with cash_on_hand_path.open(mode="r", encoding = "UTF-8") as a:
             cash_on_hand_list = []
-            reader = csv.reader(file)
+            reader = csv.reader(a)
             next(reader)
             for line in reader:
                 cash_on_hand_list.append(line)
@@ -34,25 +34,25 @@ def cash_on_hand(forex):
                     losses = float(cash_on_hand_list[i][1]) - float(cash_on_hand_list[i + 1][1])
 
                     with report_path.open(mode= "a") as file:
-                        file.write(f"\n[CASH DEFICIT] DAY: {cash_on_hand_list[i + 1 ][0]}, AMOUNT: SGD{round((losses *forex),2)}")
-                        file.close()
+                        a.write(f"\n[CASH DEFICIT] DAY: {cash_on_hand_list[i + 1 ][0]}, AMOUNT: SGD{round((losses *forex),2)}")
+                        a.close()
 
                 i += 1
 
 
 
             if losses == []:
-                file.write("\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-                file.close()
+                a.write("\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+                a.close()
 
 
 
-            file.close()
+            a.close()
 
     except:
         with report_path.open(mode="a") as file:
-            file.write(f"\n[Cash on hand File Error] There is an error with Cash on hand file. Please try to input correct file name\n")
-            file.close()
+            a.write(f"\n[Cash on hand File Error] There is an error with Cash on hand file. Please try to input correct file name\n")
+            a.close()
 
     else:
         pass
