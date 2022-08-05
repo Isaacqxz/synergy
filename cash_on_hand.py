@@ -26,7 +26,7 @@ def cash_on_hand(forex):
 
             i = []
             losses = []
-            
+
             while len(cash_on_hand_list) > i + 1:
 
                 if float(cash_on_hand_list(i+1)[1]) < float(cash_on_hand_list[i][1]):
