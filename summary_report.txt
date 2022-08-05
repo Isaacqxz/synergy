@@ -1,4 +1,4 @@
-[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD1.37558
+[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD1.37554
 [HIGHEST OVERHEAD] RENTAL EXPENSE: SGD42.23
 [Cash on hand File Error] There is an error with Cash on hand file. Please try to input correct file name
-[Cash on hand File Error] There is an error with Cash on hand file. Please try to input correct file name
+[Profit and loss error] There is an error with Cash on hand file. Please try to input correct file name
