@@ -28,9 +28,7 @@ def profit_and_loss(forex):
         i = 0
         losses = []
 
-        if losses == []:
-            file.write("\n[NET PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
-            file.close()
+
 
         while len(profit_n_lost_list) > i + 1:
 
@@ -44,7 +42,9 @@ def profit_and_loss(forex):
 
             i += 1
 
-
+        if losses == []:
+            file.write("\n[NET PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
+            file.close()
 
         file.close()
 
