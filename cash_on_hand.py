@@ -34,34 +34,45 @@ def cash_on_hand(forex):
             # empty variables
 
             while len(cash_on_hand_list) > i + 1:
+                # using len as the amount of rows there is in the csv file 
+                # using while to create a loop so that code runs through all the datas len
 
                 if float(cash_on_hand_list[i+1][1]) < float(cash_on_hand_list[i][1]):
-
+                # using if function to check every rows in the range, if the row  is i+1 ,which is one day ahead and if the column 4, 
+                # which is the Cash on hand, is smaller than just row 1, which is the current day
                     losses = float(cash_on_hand_list[i][1]) - float(cash_on_hand_list[i + 1][1])
-
+                # will append the difference of the day ahead and the current day 
                     with summary_path.open(mode= "file_data") as file_data:
                         file_data.write(f"\n[CASH DEFICIT] DAY: {cash_on_hand_list[i + 1 ][0]}, AMOUNT: SGD{round((losses *forex),2)}")
                         file_data.close()
-
+                    # opening the summary path to write the CASH DEFICIT data into it. Forex is to convert USD to SGD
                 i += 1
+                # so that it will run the next line
 
 
 
             if losses == []:
-                file_data.write("\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-                file_data.close()
+                # if no data is extracted, which means net profit on each day is higher than the previous day, this if will run instead
+                with summary_path.open(mode= "a") as file_data:
+                    # opening summary path
+                    file_data.write("\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+                    file_data.close()
+                    # writing NET CASH SURPLUS in summary path
 
 
 
             file_data.close()
+            # close file
 
     except:
         with summary_path.open(mode="file_data") as file_data:
+            # opening summary path
             file_data.write(f"\n[Cash on hand file_data Error] There is an error with Cash on hand file_data. Please try to input correct file_data name\n")
             file_data.close()
-
+            # writing error code to notify that code is not working
     else:
         pass
+    # continue
             
 
 

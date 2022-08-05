@@ -40,8 +40,8 @@ def profit_and_loss(forex):
                 # using while to create a loop so that code runs through all the datas len
 
                 if float(profit_n_lost_list[i+1][4]) < float(profit_n_lost_list[i][4]):
-                # using if function to check every rows in the range, if the row  is i+1 ,which is one day ahead and if the column 4, which is the net profit, 
-                # is smaller than just row 1, which is the current day
+                # using if function to check every rows in the range, if the row  is i+1 ,which is one day ahead and if the column 4, 
+                # which is the net profit, is smaller than just row 1, which is the current day
 
                     losses = float(profit_n_lost_list[i][4]) - float(profit_n_lost_list[i + 1][4])
                     # will append the difference of the day ahead and the current day 
