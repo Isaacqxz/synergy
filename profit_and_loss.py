@@ -18,44 +18,44 @@ def profit_and_loss(forex):
     # creating file
 
 
-    # try:
-    with profit_n_lost_path.open(mode="r", encoding = "UTF-8") as file:
-        profit_n_lost_list = []
-        reader = csv.reader(file)
-        next(reader)
-        for line in reader:
-            profit_n_lost_list.append(line)
+    try:
+        with profit_n_lost_path.open(mode="r", encoding = "UTF-8") as file:
+            profit_n_lost_list = []
+            reader = csv.reader(file)
+            next(reader)
+            for line in reader:
+                profit_n_lost_list.append(line)
 
-        i = 0
-        losses = []
+            i = 0
+            losses = []
 
 
 
-        while len(profit_n_lost_list) > i + 1:
+            while len(profit_n_lost_list) > i + 1:
 
-            if float(profit_n_lost_list[i+1][4]) < float(profit_n_lost_list[i][4]):
+                if float(profit_n_lost_list[i+1][4]) < float(profit_n_lost_list[i][4]):
 
-                losses = float(profit_n_lost_list[i][4]) - float(profit_n_lost_list[i + 1][4])
+                    losses = float(profit_n_lost_list[i][4]) - float(profit_n_lost_list[i + 1][4])
 
+                    with report_path.open(mode= "a") as file:
+                        file.write(f"\n[PROFIT DEFICIT] DAY: {profit_n_lost_list[i + 1 ][0]}, AMOUNT: SGD{round((losses *forex),2)}")
+                        file.close()
+
+                i += 1
+
+            if losses == []:
                 with report_path.open(mode= "a") as file:
-                    file.write(f"\n[PROFIT DEFICIT] DAY: {profit_n_lost_list[i + 1 ][0]}, AMOUNT: SGD{round((losses *forex),2)}")
+                    file.write("\n[NET PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
                     file.close()
 
-            i += 1
+            file.close()
 
-        if losses == []:
-            with report_path.open(mode= "a") as file:
-                file.write("\n[NET PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-                file.close()
+    except:
+        with report_path.open(mode="a") as file:
+            file.write(f"\n[Profit and loss e] There is an error with Cash on hand file. Please try to input correct file name")
+            file.close()
 
-        file.close()
-
-    # except:
-    #     with report_path.open(mode="a") as file:
-    #         file.write(f"\n[Profit and loss e] There is an error with Cash on hand file. Please try to input correct file name")
-    #         file.close()
-
-    # else:
-    #     pass
+    else:
+        pass
 
 
