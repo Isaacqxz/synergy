@@ -35,7 +35,7 @@ def profit_and_loss(forex):
             i = []
             while len(profit_n_lost_list) > i + 1:
 
-                if float(profit_n_lost_list(i+1)[4]) < float(profit_n_lost_list[i][4]):
+                if float(profit_n_lost_list[i+1][4]) < float(profit_n_lost_list[i][4]):
 
                     losses = float(profit_n_lost_list[i][4]) - float(profit_n_lost_list[i + 1][4])
 
@@ -51,7 +51,7 @@ def profit_and_loss(forex):
 
     except:
         with report_path.open(mode="a") as file:
-            file.write(f"[Profit and loss error] There is an error with Cash on hand file. Please try to input correct file name\n")
+            file.write(f"\n[Profit and loss e] There is an error with Cash on hand file. Please try to input correct file name")
             file.close()
 
     else:
