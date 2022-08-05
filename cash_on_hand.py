@@ -42,7 +42,7 @@ def cash_on_hand(forex):
 
 
             if losses == []:
-                file.write("\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
+                file.write("\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
                 file.close()
 
 
