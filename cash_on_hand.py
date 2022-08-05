@@ -33,7 +33,7 @@ def cash_on_hand(forex):
 
                     losses = float(cash_on_hand_list[i][1]) - float(cash_on_hand_list[i + 1][1])
 
-                    with report_path.open(mode= "a") as file:
+                    with report_path.open(mode= "a") as a:
                         a.write(f"\n[CASH DEFICIT] DAY: {cash_on_hand_list[i + 1 ][0]}, AMOUNT: SGD{round((losses *forex),2)}")
                         a.close()
 
@@ -51,7 +51,7 @@ def cash_on_hand(forex):
 
     except:
         with report_path.open(mode="a") as a:
-            a.write(f"\n[Cash on hand File Error] There is an error with Cash on hand file. Please try to input correct file name\n")
+            a.write(f"\n[Cash on hand a Error] There is an error with Cash on hand a. Please try to input correct a name\n")
             a.close()
 
     else:
