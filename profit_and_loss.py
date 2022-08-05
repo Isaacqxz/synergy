@@ -25,14 +25,13 @@ def profit_and_loss(forex):
             for line in reader:
                 profit_n_lost_list.append(line)
 
-
+            i = 0
             losses = []
 
             if losses == []:
                 file.write("\n[NET PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
                 file.close()
 
-            i = []
             while len(profit_n_lost_list) > i + 1:
 
                 if float(profit_n_lost_list[i+1][4]) < float(profit_n_lost_list[i][4]):
