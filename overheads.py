@@ -26,4 +26,4 @@ def overhead(forex):
     return Highest_overhead
 
 with open("summary_report.txt", "a") as a:
-    a.write(f"[HIGHEST OVERHEAD] {overhead(forex)[0].upper()}: SGD{overhead(forex)[1]}\n")
+    a.write(f"[HIGHEST OVERHEAD] {overhead(forex)[0].upper()}: SGD{overhead(forex)[1]}")
