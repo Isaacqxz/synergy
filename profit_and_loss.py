@@ -15,6 +15,7 @@ def profit_and_loss(forex):
     """
     report_path = Path.cwd()/"summary_report.txt"
     profit_n_lost_path = Path.cwd()/"csv_report"/"profit_and_loss_usd.csv"
+    # creating file
 
 
     # try:
@@ -42,7 +43,8 @@ def profit_and_loss(forex):
 
             i += 1
 
-            if losses == []:
+        if losses == []:
+            with report_path.open(mode= "a") as file:
                 file.write("\n[NET PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
                 file.close()
 
