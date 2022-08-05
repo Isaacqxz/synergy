@@ -21,7 +21,7 @@ def cash_on_hand(forex):
             for line in reader:
                 cash_on_hand_list.append(line)
 
-
+                i += 1
             losses = []
 
             if losses == []:
@@ -39,7 +39,7 @@ def cash_on_hand(forex):
                         file.write(f"\n[CASH DEFICIT] DAY: {cash_on_hand_list[i + 1 ][0]}, AMOUNT: SGD{round((losses *forex),2)}")
                         file.close()
 
-                i += 1
+
 
 
 
