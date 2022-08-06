@@ -51,6 +51,7 @@ def cash_on_hand(forex):
 
             if losses == []:
                 # if no data is extracted, which means net profit on each day is higher than the previous day, this if will run instead
+                
                 with summary_path.open(mode= "a") as file_data:
                     # opening summary path
                     file_data.write("\n[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
