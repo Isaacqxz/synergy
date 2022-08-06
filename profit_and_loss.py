@@ -12,7 +12,7 @@ def profit_and_loss(forex):
     """ 
     summary_path = Path.cwd()/"summary_report.txt" 
     profit_n_lost_path = Path.cwd()/"csv_report"/"profit_and_loss_usd.csv" 
-    # creating file_data 
+    # creating file data 
  
  
     try: 
