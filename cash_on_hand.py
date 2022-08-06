@@ -58,10 +58,8 @@ def cash_on_hand(forex):
                     file_data.close()
                     # writing NET CASH SURPLUS in summary path
 
-
-
             file_data.close()
-            # close file
+            # close the file
 
     except:
         with summary_path.open(mode="file_data") as file_data:
