@@ -66,8 +66,9 @@ def profit_and_loss(forex):
         with summary_path.open(mode="a") as file_data: 
             # opening summary path 
             file_data.write(f"\n[Profit and loss] There is an error with profit_and_loss_data. Please try to input correct file_data name") 
-            file_data.close() 
             # writing error code to notify that code is not working 
+            file_data.close() 
+            # close file 
  
     else: 
         pass 
