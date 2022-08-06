@@ -48,7 +48,7 @@ def profit_and_loss(forex):
                     # opening the summary path to write the PROFIT DEFICIT data into it. Forex is to convert USD to SGD 
  
                 i += 1 
-                # so that it will run the next line 
+                # such that it will run the next line 
  
             if losses == []: 
                 # if no data is extracted, which means net profit on each day is higher than the previous day, this if will run instead 
