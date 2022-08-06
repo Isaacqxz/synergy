@@ -45,7 +45,7 @@ def cash_on_hand(forex):
                         file_data.close()
                     # opening the summary path to write the CASH DEFICIT data into it. Forex is to convert USD to SGD
                 i += 1
-                # so that it will run the next line
+                # it will run the next line before looping 
 
 
 
