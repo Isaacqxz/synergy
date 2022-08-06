@@ -27,8 +27,6 @@ def cash_on_hand(forex):
             # appending into empty list
 
 
-
-
             i = 0
             losses = []
             # empty variables
@@ -72,7 +70,7 @@ def cash_on_hand(forex):
             # writing error code to notify that code is not working
     else:
         pass
-    # continue
+    # continue 
             
 
 
