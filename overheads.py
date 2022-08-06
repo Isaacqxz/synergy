@@ -11,7 +11,7 @@ def overhead(forex):
         csvreader = csv.reader(a)
         next(csvreader)
 
-        for row in csvreader:rows.append(row)
+    for row in csvreader:rows.append(row)
 
     max = 0
     #the first number in overheads.csv can be max since all overheads is > 0.
