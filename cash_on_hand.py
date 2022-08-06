@@ -68,9 +68,7 @@ def cash_on_hand(forex):
             # writing error code to notify that code is not working
             file_data.close()
             # close file
-    else:
-        pass
-    # continue 
+
             
 
 
