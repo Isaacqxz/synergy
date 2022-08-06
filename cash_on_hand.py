@@ -26,7 +26,6 @@ def cash_on_hand(forex):
                 cash_on_hand_list.append(line)
             # appending into empty list
 
-
             i = 0
             losses = []
             # empty variables
@@ -46,7 +45,6 @@ def cash_on_hand(forex):
                     # opening the summary path to write the CASH DEFICIT data into it. Forex is to convert USD to SGD
                 i += 1
                 # it will run the next line before looping 
-
 
 
             if losses == []:
