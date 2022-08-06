@@ -4,12 +4,7 @@ from pathlib import Path
 forex = API.api_function() 
  
 def profit_and_loss(forex): 
-    """" 
-    function will compute the difference in the net profit between each day. 
-    If the net profit is not consecutively higher each day, 
-    the program will highlight the day where net profit is lower than the previous day 
-    and the value difference 
-    """ 
+
     summary_path = Path.cwd()/"summary_report.txt" 
     profit_n_lost_path = Path.cwd()/"csv_report"/"profit_and_loss_usd.csv" 
     # creating file data 
