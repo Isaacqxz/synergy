@@ -14,7 +14,8 @@ def profit_and_loss(forex):
     profit_n_lost_path = Path.cwd()/"csv_report"/"profit_and_loss_usd.csv" 
     # creating file data 
  
-
+    try: 
+        # exception handling 
         with profit_n_lost_path.open(mode="r", encoding = "UTF-8") as file_data: 
             # opening file as read to retrieve data from profit_and_loss_used.csv 
             profit_n_lost_list = [] 
