@@ -69,3 +69,6 @@ def profit_and_loss(forex):
             file_data.close() 
             # close file 
  
+    else: 
+        pass 
+    # continue
