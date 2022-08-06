@@ -3,6 +3,9 @@ import API, overheads, profit_and_loss, cash_on_hand, tryin
 
 #defining function
 def main():
+    """
+    
+    """
     forex = API.api_function()    
     overheads.overhead(forex)
     cash_on_hand.cash_on_hand(forex)
