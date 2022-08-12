@@ -45,7 +45,7 @@ def cash_on_hand(forex):
                     # opening the summary path to write the CASH DEFICIT data into it. Forex is to convert USD to SGD
                 i += 1
                 # it will run the next line before looping 
-                file_data.close()
+
 
             if losses == 0:
                 # if no data is extracted, meaning that net profit on each day is higher than the previous day, this if will run instead. 
