@@ -27,7 +27,7 @@ def cash_on_hand(forex):
             # appending into empty list
 
             i = 0
-            losses = []
+            losses = 0
             # empty variables
 
             while len(cash_on_hand_list) > i + 1:
@@ -47,7 +47,7 @@ def cash_on_hand(forex):
                 # it will run the next line before looping 
                 file_data.close()
 
-            if losses == []:
+            if losses == 0:
                 # if no data is extracted, meaning that net profit on each day is higher than the previous day, this if will run instead. 
 
 
