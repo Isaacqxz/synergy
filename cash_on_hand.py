@@ -39,9 +39,9 @@ def cash_on_hand(forex):
                 # which is the Cash on hand, is smaller than just row 1, which is the current day
                     losses = float(cash_on_hand_list[i][1]) - float(cash_on_hand_list[i + 1][1])
                 # will append the difference of the day ahead and the current day 
-                    with summary_path.open(mode= "file_data") as file_data:
-                        file_data.write(f"\n[CASH DEFICIT] DAY: {cash_on_hand_list[i + 1 ][0]}, AMOUNT: SGD{round((losses *forex),2)}")
-                        file_data.close()
+                    with summary_path.open(mode= "a") as file_data:
+                        file_data.write(f"\n[CASH DEFICIT] DAY: {cash_on_hand_list[i + 1][0]}, AMOUNT: SGD{round((losses *forex),2)}")
+                        file_data()
                     # opening the summary path to write the CASH DEFICIT data into it. Forex is to convert USD to SGD
                 i += 1
                 # it will run the next line before looping 
