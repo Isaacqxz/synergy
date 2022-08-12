@@ -38,6 +38,7 @@ def cash_on_hand(forex):
                 # using if function to check every rows in the range, if the row  is i+1 ,which is one day ahead and if the column 4, 
                 # which is the Cash on hand, is smaller than just row 1, which is the current day
                 losses = float(cash_on_hand_list[i][1]) - float(cash_on_hand_list[i + 1][1])
+                
                 # will append the difference of the day ahead and the current day 
                 with summary_path.open(mode= "a") as file_data:
                     file_data.write(f"\n[CASH DEFICIT] DAY: {cash_on_hand_list[i + 1][0]}, AMOUNT: SGD{round((losses *forex),2)}")
@@ -45,7 +46,7 @@ def cash_on_hand(forex):
                     # opening the summary path to write the CASH DEFICIT data into it. Forex is to convert USD to SGD
             i += 1
                 # it will run the next line before looping 
-
+        print (losses)
 
         if losses == []:
                 # if no data is extracted, meaning that net profit on each day is higher than the previous day, this if will run instead. 
