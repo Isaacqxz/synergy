@@ -66,7 +66,7 @@ def cash_on_hand(forex):
     except:
         with summary_path.open(mode="a") as file_data:
             # opening summary path
-            file_data.write(f"\n[Cash on hand file_data Error] There is an error with Cash on hand file_data. Please try to input correct file_data name\n")
+            file_data.write(f"\n[Cash on hand file_data Error] There is an error with Cash on hand file_data. Please try to input correct file_data name")
             # writing error code to notify that code is not working
             file_data.close()
             # close file
