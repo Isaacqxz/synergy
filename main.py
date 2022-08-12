@@ -1,11 +1,14 @@
-import API, overheads, profit_and_loss, cash_on_hand, tryin
+
+import API, overheads, profit_and_loss, cash_on_hand
 
 
+#defining function
 def main():
     forex = API.api_function()    
     overheads.overhead(forex)
-    tryin.coh_function(forex)
+    cash_on_hand.cash_on_hand(forex)
     profit_and_loss.profit_and_loss(forex)
     return("output successful")
 
+#printing the function
 print(main())
