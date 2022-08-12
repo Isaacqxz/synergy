@@ -4,6 +4,10 @@ from pathlib import Path
 forex = API.api_function()
 
 def overhead(forex):
+    """"
+ The program will find the highest
+overhead category and its value.
+    """
     path = str(Path.cwd())+"\csv_report\overheads.csv"
 
     rows = []
@@ -14,7 +18,8 @@ def overhead(forex):
         for row in csvreader:rows.append(row)
 
     max = 0
-    # this is so that the first number in overheads.csv can be max since all overheads is > 0. After first number is max, the code will use the max and compare with subsequence data to aquire new max
+    #the first number in overheads.csv can be max since all overheads is > 0.
+    #After first number is max, the code will use the max and compare with subsequence data to aquire new max
     Highest_overhead = []
 
     for i in range(len(rows)):
@@ -25,4 +30,4 @@ def overhead(forex):
     return Highest_overhead
 
 with open("summary_report.txt", "a") as a:
-    a.write(f"[HIGHEST OVERHEAD] {overhead(forex)[0].upper()}: SGD{overhead(forex)[1]}\n")
+    a.write(f"[HIGHEST OVERHEAD] {overhead(forex)[0].upper()}: SGD{overhead(forex)[1]}")
