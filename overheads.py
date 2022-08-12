@@ -29,5 +29,5 @@ overhead category and its value.
 
     return Highest_overhead
 
-with open("summary_report.txt", "a") as a:
-    a.write(f"[HIGHEST OVERHEAD] {overhead(forex)[0].upper()}: SGD{overhead(forex)[1]}")
+with open("summary_report.txt", "a") as file_write:
+    file_write.write(f"[HIGHEST OVERHEAD] {overhead(forex)[0].upper()}: SGD{overhead(forex)[1]}")
